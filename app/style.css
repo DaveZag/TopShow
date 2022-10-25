@@ -1,0 +1,114 @@
+/* ............. Css Resets ........... */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  box-sizing: inherit;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 100%;
+  height: 100vh;
+  font-family: 'Poppins', 'Roboto', Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+img,
+picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reusable classes ........... */
+
+.limit {
+  padding-inline: 7rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-jc-c {
+  justify-content: center;
+}
+
+.flex-al-c {
+  align-items: center;
+}
+
+.flex-jc-sb {
+  justify-content: space-between;
+}
+
+/* ........... Header ............ */
+
+.header {
+  padding-block: 0.9rem;
+  background-color: rgba(225, 147, 23, 0.858);
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.3);
+  font-size: 1.3rem;
+}
+
+.navbar {
+  gap: 1rem;
+}
+
+.navlink:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1.3rem 0;
+  width: 100%;
+  gap: 1rem;
+  color: rgb(245, 250, 255);
+  background-color: rgba(2, 2, 2);
+  font-size: 1.2rem;
+}
+
+.contain {
+  gap: 0.5rem;
+}
+
+.contain a {
+  color: rgba(225, 147, 23, 0.858);
+}
+
+.contain a:hover {
+  color: #fff;
+}
