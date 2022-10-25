@@ -109,3 +109,24 @@ a {
   margin-bottom: 0;
   border-top: solid 3px #000;
 }
+
+.shows {
+  display: flex;
+  align-items: center;
+  
+}
+
+.my-show {
+  margin: 1rem;
+}
+
+.my-show-image {
+  width: 150px;
+  height: 150px;
+}
+
+.my-show-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
