@@ -88,3 +88,24 @@ a {
 .navlink:hover {
   background-color: rgb(255, 255, 255);
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  border: solid 3px #000;
+}
+
+.footer-rights {
+  height: 2rem;
+  padding: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-emptySpace {
+  height: 1.5rem;
+  background-color: #d3d3d3;
+  margin-bottom: 0;
+  border-top: solid 3px #000;
+}
