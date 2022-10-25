@@ -17,6 +17,7 @@ module.exports = {
 
   // setup our webpack server's port, Live reload and path
   devServer: {
+    port: 8080,
     static: distPath,
     hot: true,
     watchFiles: ['app/**/*'],

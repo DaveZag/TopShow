@@ -38,4 +38,53 @@ ul {
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+/* Reusable classes ........... */
+
+.limit {
+  padding-inline: 7rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-jc-c {
+  justify-content: center;
+}
+
+.flex-al-c {
+  align-items: center;
+}
+
+.flex-jc-sb {
+  justify-content: space-between;
+}
+
+/* ........... Header ............ */
+
+.header {
+  padding-block: 0.9rem;
+  background-color: rgba(225, 147, 23, 0.858);
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.3);
+  font-size: 1.3rem;
+}
+
+.navbar {
+  gap: 1rem;
+}
+
+.navlink:hover {
+  background-color: rgb(255, 255, 255);
 }
