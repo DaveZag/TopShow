@@ -1,11 +1,5 @@
-export const shows = document.querySelector('.shows');
-
-const getShows = async () => {
-  const res = await fetch('https://api.tvmaze.com/shows');
-  const data = await res.json();
-
-  showData(data);
-};
+const shows = document.querySelector('.shows');
+export default shows;
 
 const showData = (data) => {
   let show = '';
@@ -28,9 +22,16 @@ const showData = (data) => {
           </div>`;
     }
 
-    count++;
+    count += 1;
   });
   shows.innerHTML = show;
+};
+
+const getShows = async () => {
+  const res = await fetch('https://api.tvmaze.com/shows');
+  const data = await res.json();
+
+  showData(data);
 };
 
 getShows();
