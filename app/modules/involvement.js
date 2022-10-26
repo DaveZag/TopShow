@@ -1,8 +1,7 @@
-import { shows } from './getshows.js';
-import './getshows.js';
+import shows from './getshows.js';
 
 const endpoint = new URL(
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/VkL66oEPzdyEWHkyAEbV/likes'
+  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/VkL66oEPzdyEWHkyAEbV/likes',
 );
 
 shows.addEventListener('click', (e) => {
@@ -23,11 +22,11 @@ shows.addEventListener('click', (e) => {
     const getLikes = async () => {
       const res = await fetch(endpoint);
       const data = await res.json();
-      console.log(data);
       data.forEach((item) => {
         if (item.item_id === liked) {
-          let likes = item.likes;
-          likes++;
+          // const { likes } = item; 
+          // likes += 1;
+
         }
       });
     };
