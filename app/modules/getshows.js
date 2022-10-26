@@ -1,30 +1,39 @@
-// import getLikes from "./involvement.js";
+import commentsPopup from './comment-popup.js';
+import displayComments from './comments-utils.js';
 
 const shows = document.querySelector('.shows');
 export default shows;
 
 const showData = (data) => {
-  let show = '';
-
   let count = 0;
 
-  data.forEach((e) => {
-    // console.log(e);
-    if (count < 6) {
-      show += `<div class="my-show">
-            <div class="my-show-image">
-          <img src="${e.image.medium}"></img>
-          </div>
-              <div class="my-show-title">
-                  <p>${e.name}</p>
-                  <i class="bi bi-suit-heart" data-id='${e.id}'></i>
-              </div>
-          </div>`;
+  data.forEach((show) => {
+    if (count < 8) {
+      const showsContainer = document.createElement('div');
+      showsContainer.classList.add('my-show');
+      showsContainer.innerHTML = `
+      <div class="my-show-image">
+        <img src="${show.image.original}"></img>
+      </div>
+      <div class="my-show-title">
+            ${show.name}
+            <i class="bi bi-suit-heart" data-id='${show.id}'></i>
+      </div>`;
+
+      const commentBtn = document.createElement('button');
+      commentBtn.classList.add('comment-btn');
+      commentBtn.setAttribute('type', 'button');
+      commentBtn.innerText = 'Comment';
+      commentBtn.addEventListener('click', () => {
+        commentsPopup(show, show.id, 0);
+        displayComments(show.id);
+      });
+      showsContainer.appendChild(commentBtn);
+      shows.appendChild(showsContainer);
     }
 
     count += 1;
   });
-  shows.innerHTML = show;
 };
 
 const getShows = async () => {
