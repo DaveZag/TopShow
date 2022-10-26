@@ -24,7 +24,7 @@ shows.addEventListener('click', (e) => {
       const data = await res.json();
       data.forEach((item) => {
         if (item.item_id === liked) {
-          // const { likes } = item; 
+          // const { likes } = item;
           // likes += 1;
 
         }
