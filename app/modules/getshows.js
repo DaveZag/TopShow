@@ -18,11 +18,10 @@ const showData = (data) => {
 
                   <i class="bi bi-suit-heart" data-id='${e.id}'></i>
               </div>
-              <div></div>
           </div>`;
     }
 
-    count += 1;
+    count++;
   });
   shows.innerHTML = show;
 };
@@ -35,5 +34,3 @@ const getShows = async () => {
 };
 
 getShows();
-
-// const likebtn = document.querySelector('.my-show-title');
