@@ -1,5 +1,4 @@
-const shows = document.querySelector('.shows');
-const more = document.getElementById('more');
+export const shows = document.querySelector('.shows');
 
 const getShows = async () => {
   const res = await fetch('https://api.tvmaze.com/shows');
@@ -14,6 +13,7 @@ const showData = (data) => {
   let count = 0;
 
   data.forEach((e) => {
+    // console.log(e);
     if (count < 6) {
       show += `<div class="my-show">
             <div class="my-show-image">
@@ -22,8 +22,9 @@ const showData = (data) => {
               <div class="my-show-title">
                   ${e.name}
 
-                  <i class="bi bi-suit-heart"></i>
+                  <i class="bi bi-suit-heart" data-id='${e.id}'></i>
               </div>
+              <div></div>
           </div>`;
     }
 
@@ -33,3 +34,5 @@ const showData = (data) => {
 };
 
 getShows();
+
+// const likebtn = document.querySelector('.my-show-title');
