@@ -116,6 +116,35 @@ input[type='submit'] {
   background-color: rgb(255, 255, 255);
 }
 
+.main {
+  margin-bottom: 2rem;
+}
+
+.shows {
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  column-gap: 0.2rem;
+  place-items: center;
+}
+
+.my-show {
+  margin-top: 1rem;
+  width: 90%;
+  height: auto;
+}
+
+.my-show-image {
+  width: 100%;
+  height: auto;
+}
+
+.my-show-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
 /* .................. Popup................... */
 
 .popup {
