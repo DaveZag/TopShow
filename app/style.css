@@ -116,8 +116,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 33.33%);
   column-gap: 0.2rem;
-  max-width: auto;
-  place-items:  center;
+  place-items: center;
 }
 
 .my-show {
