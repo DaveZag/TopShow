@@ -1,3 +1,5 @@
+// import getLikes from "./involvement.js";
+
 const shows = document.querySelector('.shows');
 export default shows;
 
@@ -14,14 +16,13 @@ const showData = (data) => {
           <img src="${e.image.medium}"></img>
           </div>
               <div class="my-show-title">
-                  ${e.name}
-
+                  <p>${e.name}</p>
                   <i class="bi bi-suit-heart" data-id='${e.id}'></i>
               </div>
           </div>`;
     }
 
-    count++;
+    count += 1;
   });
   shows.innerHTML = show;
 };
