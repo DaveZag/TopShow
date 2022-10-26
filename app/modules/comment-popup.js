@@ -1,4 +1,4 @@
-import displayComments, { saveComments } from './comments-utils.js';
+import { saveComments } from './comments-utils.js';
 
 const commentPopup = (show, id, cmtsNumber) => {
   const mainEle = document.querySelector('main');
@@ -6,7 +6,7 @@ const commentPopup = (show, id, cmtsNumber) => {
   popup.classList.add('popup', 'flex', 'flex-col', 'flex-al-c');
   popup.innerHTML = `
     <div class="close-btn">
-        <i class="fa-solid fa-circle-xmark"></i>
+        <i class="fa-solid fa-circle-xmark "></i>
     </div>
     <div class="details flex">
         <img class="thumbnail" src="${show.image.original}" alt="show thumbnail" />
@@ -29,7 +29,6 @@ const commentPopup = (show, id, cmtsNumber) => {
                     Comments (<span class="comments-num">${cmtsNumber}</span>)
                 </h3>
                 <ul class="comments">
-                ${displayComments(id)}
                 </ul>
             </div>
         </div>
@@ -49,23 +48,31 @@ const commentPopup = (show, id, cmtsNumber) => {
   mainEle.appendChild(popup);
 
   // close popup on button click
-  const closeBtn = document.getelementByClassName('close-btn');
-  closeBtn.onClick = () => {
+  const closeBtn = popup.querySelector('.close-btn');
+
+  closeBtn.addEventListener('click', () => {
     mainEle.removeChild(popup);
-  };
+  });
 
   // Submit popup data on submit-btn click
-  const submitBtn = document.getelementByClassName('submit-btn');
-  submitBtn.onclick = (e) => {
-    e.preventDefault();
+  const submitBtn = popup.querySelector('.submit-btn');
+
+  submitBtn.addEventListener('click', (e) => {
     const name = document.getElementById('name').value;
     const comment = document.getElementById('comment-area').value;
 
-    if (name.value !== '' || comment.value !== '') {
-      console.log(name.value, comment.value);
-      saveComments(id, name.value, comment.value);
+    if (name && comment) {
+      saveComments(id, name, comment);
+      if (saveComments) {
+        console.log(saveComments(id, name, comment));
+      }
+    } else {
+      e.preventDefault();
     }
-  };
+  });
+
+  const form = popup.querySelector('.form');
+  form.addEventListener('submit', (e) => { e.preventDefault(); });
 };
 
 export default commentPopup;

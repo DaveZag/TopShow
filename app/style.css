@@ -46,6 +46,13 @@ input[type='button'],
 input[type='reset'],
 input[type='submit'] {
   cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -116,6 +123,7 @@ input[type='submit'] {
   background-color: rgb(255, 255, 255);
 }
 
+/* .......... Main section .......... */
 .main {
   margin-bottom: 2rem;
 }
@@ -125,6 +133,8 @@ input[type='submit'] {
   grid-template-columns: repeat(3, 33.33%);
   column-gap: 0.2rem;
   place-items: center;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .my-show {
@@ -143,6 +153,19 @@ input[type='submit'] {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
+}
+
+.comment-btn {
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0 auto;
+  background-color: rgb(225, 147, 23);
+}
+
+.comment-btn:hover {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
 }
 
 /* .................. Popup................... */
@@ -167,14 +190,12 @@ input[type='submit'] {
   position: absolute;
   top: 1rem;
   right: 1rem;
-}
-
-.close-btn i {
+  width: 20%;
   font-size: 2rem;
   cursor: pointer;
 }
 
-.close-btn i:hover {
+.close-btn:hover {
   color: rgb(255, 255, 255);
 }
 
@@ -280,9 +301,6 @@ form *::placeholder {
 /* .................. Footer .................. */
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   padding: 1.3rem 0;
   width: 100%;
   gap: 1rem;
