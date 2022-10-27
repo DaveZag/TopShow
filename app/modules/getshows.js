@@ -7,14 +7,11 @@ const shows = document.querySelector('.shows');
 export default shows;
 
 const showData = (data) => {
-  let count = 0;
-
-  data.forEach((show) => {
-    if (count < 9) {
-      const showsContainer = document.createElement('div');
-      showsContainer.classList.add('my-show');
-      showsContainer.setAttribute('id', show.id);
-      showsContainer.innerHTML = `
+  data.slice(0, 9).forEach((show) => {
+    const showsContainer = document.createElement('div');
+    showsContainer.classList.add('my-show');
+    showsContainer.setAttribute('id', show.id);
+    showsContainer.innerHTML = `
       <div class="show-image">
         <img src="${show.image.original}"></img>
       </div>
@@ -25,31 +22,28 @@ const showData = (data) => {
               <p class = "likes"></p>
             </div>
       </div>`;
-      const likesContainer = showsContainer.querySelector('.likes');
-      const likeBtn = showsContainer.querySelector('.like-btn');
-      getLikes(show, likesContainer);
+    const likesContainer = showsContainer.querySelector('.likes');
+    const likeBtn = showsContainer.querySelector('.like-btn');
+    getLikes(show, likesContainer);
 
-      likeBtn.addEventListener('click', () => {
-        saveLike(show).then((res) => {
-          if (res.status === 201) {
-            getLikes(show, likesContainer);
-          }
-        });
+    likeBtn.addEventListener('click', () => {
+      saveLike(show).then((res) => {
+        if (res.status === 201) {
+          getLikes(show, likesContainer);
+        }
       });
+    });
 
-      const commentBtn = document.createElement('button');
-      commentBtn.classList.add('comment-btn');
-      commentBtn.setAttribute('type', 'button');
-      commentBtn.innerText = 'Comment';
-      commentBtn.addEventListener('click', () => {
-        commentsPopup(show, show.id, 0);
-        displayComments(show.id);
-      });
-      showsContainer.appendChild(commentBtn);
-      shows.appendChild(showsContainer);
-    }
-
-    count += 1;
+    const commentBtn = document.createElement('button');
+    commentBtn.classList.add('comment-btn');
+    commentBtn.setAttribute('type', 'button');
+    commentBtn.innerText = 'Comment';
+    commentBtn.addEventListener('click', () => {
+      commentsPopup(show, show.id, 0);
+      displayComments(show.id);
+    });
+    showsContainer.appendChild(commentBtn);
+    shows.appendChild(showsContainer);
   });
   const allShows = [...document.querySelectorAll('.my-show')];
   const showNumber = document.querySelector('.show-num');
