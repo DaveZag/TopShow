@@ -1,5 +1,7 @@
 import commentsPopup from './comment-popup.js';
 import displayComments from './comments-utils.js';
+import itemCounter from './counter.js';
+import { saveLike, getLikes } from './involvement.js';
 
 const shows = document.querySelector('.shows');
 export default shows;
@@ -11,14 +13,29 @@ const showData = (data) => {
     if (count < 8) {
       const showsContainer = document.createElement('div');
       showsContainer.classList.add('my-show');
+      showsContainer.setAttribute('id', show.id);
       showsContainer.innerHTML = `
       <div class="my-show-image">
         <img src="${show.image.original}"></img>
       </div>
       <div class="my-show-title">
             ${show.name}
-            <i class="bi bi-suit-heart" data-id='${show.id}'></i>
+            <div class = "likes-cont flex">
+              <i class="bi bi-suit-heart like-btn" data-id='${show.id}'></i>
+              <p class = "likes"></p>
+            </div>
       </div>`;
+      const likesContainer = showsContainer.querySelector('.likes');
+      const likeBtn = showsContainer.querySelector('.like-btn');
+      getLikes(show, likesContainer);
+
+      likeBtn.addEventListener('click', () => {
+        saveLike(show).then((res) => {
+          if (res.status === 201) {
+            getLikes(show, likesContainer);
+          }
+        });
+      });
 
       const commentBtn = document.createElement('button');
       commentBtn.classList.add('comment-btn');
@@ -34,6 +51,9 @@ const showData = (data) => {
 
     count += 1;
   });
+  const allShows = [...document.querySelectorAll('.my-show')];
+  const showNumber = document.querySelector('.show-num');
+  showNumber.innerText = itemCounter(allShows) || 0;
 };
 
 const getShows = async () => {

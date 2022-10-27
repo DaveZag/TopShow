@@ -1,36 +1,26 @@
-import shows from './getshows.js';
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BjbMo6GgbwwvoOUWfiq3/likes';
 
-const endpoint = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/VkL66oEPzdyEWHkyAEbV/likes';
+const saveLike = async (item) => {
+  const post = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: item.id,
+    }),
+  });
+  return post;
+};
 
-const getLikes = async (e) => {
-  const res = await fetch(endpoint);
-  const data = await res.json();
-  data.forEach((item) => {
-    if (item.item_id === e.target.getAttribute('data-id')) {
-      let { likes } = item;
-      likes += 1;
-      console.log(`${likes} likes`);
+const getLikes = async (show, likesContainer) => {
+  const response = await fetch(url);
+  const data = await response.json();
+  data.forEach((like) => {
+    if (like.item_id === show.id) {
+      likesContainer.innerText = like.likes;
     }
   });
 };
 
-shows.addEventListener('click', (e) => {
-  const like = e.target;
-  if (like.tagName === 'I') {
-    const liked = like.getAttribute('data-id');
-    fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        // Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        item_id: `${liked}`,
-      }),
-    }).then((response) => response);
-
-    getLikes(e);
-  }
-});
-
-// export default getLikes;
+export { saveLike, getLikes };

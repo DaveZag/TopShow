@@ -1,5 +1,7 @@
+import itemCount from './counter.js';
+
 const displayComments = async (id) => {
-  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/VkL66oEPzdyEWHkyAEbV/comments?item_id=${id}`;
+  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BjbMo6GgbwwvoOUWfiq3/comments?item_id=${id}`;
 
   await fetch(url)
     .then((response) => response.json())
@@ -7,7 +9,7 @@ const displayComments = async (id) => {
       const commentContainer = document.querySelector('.comments');
       commentContainer.innerHTML = '';
       const commentNumber = document.querySelector('.comments-num');
-      commentNumber.innerHTML = data.length || 0;
+      commentNumber.innerHTML = itemCount(data) || 0;
 
       data.forEach((comment) => {
         const li = document.createElement('li');
@@ -27,7 +29,7 @@ const displayComments = async (id) => {
 
 // Save comments to API
 const saveComments = async (id, name, commentText) => {
-  const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/VkL66oEPzdyEWHkyAEbV/comments';
+  const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BjbMo6GgbwwvoOUWfiq3/comments';
   await fetch(url, {
     method: 'POST',
     headers: {
