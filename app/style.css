@@ -54,8 +54,7 @@ input[type='submit'] {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
-    rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
 }
 
 ::-webkit-scrollbar {
@@ -374,10 +373,11 @@ form *::placeholder {
   font-weight: bold;
   font-size: 1.3rem;
   margin: 0 auto;
+  background-color: rgb(225, 147, 23);
 }
 
 .submit-btn:hover {
-  background-color: rgb(225, 147, 23);
+  background-color: rgb(255, 255, 255);
 }
 
 /* .................. Footer .................. */
