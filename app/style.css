@@ -54,7 +54,7 @@ input[type='submit'] {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
 }
 
 ::-webkit-scrollbar {
@@ -140,12 +140,7 @@ input[type='submit'] {
 }
 
 .hero {
-  background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.8),
-      rgba(170, 55, 55, 0.4)
-    ),
-    url('./images/background.jpg');
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(170, 55, 55, 0.4)), url('./images/background.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   color: #fff;
