@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Leaderboard Game
+# TopShow WebApp
 
 This is a dynamic webApp that gets latest shows from TvMaze API and displays the dynamically. The app allows you to comment and like a show. It records the total number of likes in the involvement API and comments per show and it will show the comments and a brief description of the show when you click on the comments button.
 
