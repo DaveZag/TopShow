@@ -1,56 +1,53 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Leaderboard Game
 
-> Description the project.
-
+This is a dynamic webApp that gets latest shows from TvMaze API and displays the dynamically. The app allows you to comment and like a show. It records the total number of likes in the involvement API and comments per show and it will show the comments and a brief description of the show when you click on the comments button.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Html
+- Webpack
+- CSS
+- JavaScript
+- API(TvMaze and involvement)
+- Git and GitFlow
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
-
+[Live Demo Link]()
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
+\*\* this project runs on any browser
 
 To get a local copy up and running follow these simple example steps.
 
+Go to github and clone the repository
+
+- git clone https://github.com/johnkioko/Api-Capstone-Project.git
+
+- cd Api-Capstone-Project
+- npm install
+- npm start
+
 ### Prerequisites
 
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+Any browser
 
 ## Authors
 
-👤 **Author1**
+👤 **John Mutisya**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/johnkioko)
+- Twitter: [@twitterhandle](https://twitter.com/@John_Web_Dev)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/johnkioko)
 
-👤 **Author2**
+👤 **David Zagabe**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/)
+- Twitter: [@twitterhandle](https://twitter.com/)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/)
 
 ## 🤝 Contributing
 
@@ -70,6 +67,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.MD) licensed.
