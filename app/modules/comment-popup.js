@@ -56,6 +56,7 @@ const commentPopup = (show, id, cmtsNumber) => {
 
   // Submit popup data on submit-btn click
   const submitBtn = popup.querySelector('.submit-btn');
+  const form = popup.querySelector('.form');
 
   submitBtn.addEventListener('click', (e) => {
     const name = document.getElementById('name').value;
@@ -63,15 +64,12 @@ const commentPopup = (show, id, cmtsNumber) => {
 
     if (name && comment) {
       saveComments(id, name, comment);
-      if (saveComments) {
-        console.log(saveComments(id, name, comment));
-      }
+      form.reset();
     } else {
       e.preventDefault();
     }
   });
 
-  const form = popup.querySelector('.form');
   form.addEventListener('submit', (e) => { e.preventDefault(); });
 };
 
