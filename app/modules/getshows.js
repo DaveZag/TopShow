@@ -10,12 +10,12 @@ const showData = (data) => {
   let count = 0;
 
   data.forEach((show) => {
-    if (count < 8) {
+    if (count < 9) {
       const showsContainer = document.createElement('div');
       showsContainer.classList.add('my-show');
       showsContainer.setAttribute('id', show.id);
       showsContainer.innerHTML = `
-      <div class="my-show-image">
+      <div class="show-image">
         <img src="${show.image.original}"></img>
       </div>
       <div class="my-show-title">
