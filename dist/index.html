@@ -14,6 +14,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
+    <script
+      src="https://kit.fontawesome.com/bc94a42a6b.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Movie</title>
   <script defer src="main.js"></script></head>
   <body>
@@ -21,22 +25,33 @@
       <div class="logo"><a href="index.html">TopShow</a></div>
       <nav>
         <ul class="navbar flex">
-          <li><a class="navlink" href="#">Home</a></li>
-          <li><a class="navlink" href="#">About</a></li>
-          <li><a class="navlink" href="#">Contact</a></li>
+          <li><a class="navlink" href="index.html">Home</a></li>
+          <li>
+            <a class="navlink" href="#shows"
+              >Shows (<span class="show-num"></span>)</a
+            >
+          </li>
+          <li><a class="navlink" href="#footer">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main class="main">
-      <div class="shows"></div>
+      <section class="hero">
+        <div class="hero-body flex flex-col flex-center">
+          <h2>Like and Comment on your favorite shows.</h2>
+          <a class="hero-btn" href="#shows">Get Started</a>
+        </div>
+      </section>
+      <div class="shows" id="shows"></div>
     </main>
 
-    <footer class="footer">
-      <div class="footer-rights">
-        <p>Created by Microverse Under CC license</p>
-      </div>
-      <div class="footer-emptySpace"></div>
+    <footer class="footer flex flex-center" id="footer">
+      Created by:
+      <ul class="contain flex">
+        <li><a href="https://github.com/daveZag" target="_blank" rel="noreferrer noopener">Dave Zagabe</a> &</li>
+        <li><a href="https://github.com/johnkioko" target="_blank" rel="noreferrer noopener">John Kioko</a></li>
+      </ul>
     </footer>
   </body>
 </html>
