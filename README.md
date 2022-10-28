@@ -14,7 +14,7 @@ This is a simple web app that gets shows from an API and displays them dynamical
 
 ## Live Demo (if available)
 
-[**See Project 🚀**](https://github.com/johnkioko/Api-Capstone-Project/)
+[**See Project 🚀**](https://johnkioko.github.io/Api-Capstone-Project/)
 
 ## Screenshot
 
@@ -57,7 +57,7 @@ npm start
 
 ## Repo Links
 
-- Repository: [Leaderboard](https://github.com/johnkioko/Api-Capstone-Project)
+- Repository: [Api-capstone-project](https://github.com/johnkioko/Api-Capstone-Project)
 
 ## Authors
 
